@@ -1,6 +1,32 @@
 import Head from "next/head";
+import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
+
+  const [search, setSearch] = useState("");
+  const [year, setYear] = useState("");
+  const [subject, setSubject] = useState("");
+  const [type, setType] = useState("");
+
+  const router = useRouter();
+
+  const handleSearch = () => {
+    let query = `/results?searchTerm=${search}`;
+
+    if (year) query += `&year=${year}`;
+    if (subject) query += `&subject=${subject}`;
+    if (type) query += `&type=${type}`;
+
+    router.push(query);
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key == "Enter") {
+      handleSearch();
+    }
+  };
+
   return (
     <> 
       <Head>
@@ -12,22 +38,37 @@ export default function Home() {
           type = "text"
           placeholder = "Search previous year questions..."
           className = "w-full sm:w-2/3 md:w-1/2 px-4 py-3 rounded-lg border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+          value = {search}
+          onChange = {(e) => setSearch(e.target.value)}
+          onKeyDown = {handleKeyPress}
         />
+
         <div className = "flex flex-wrap gap-4 justify-center">
-          <select className = "text-black dark:text-white bg-white dark:bg-[#1f1f1f] border border-gray-300 dark:border-gray-700 px-3 py-2 border rounded-md">
-            <option>Year</option>
-            <option>2023</option>
-            <option>2022</option>
+          <select 
+          className = "text-black dark:text-white bg-white dark:bg-[#1f1f1f] border border-gray-300 dark:border-gray-700 px-3 py-2 border rounded-md"
+          onChange={(e) => setYear(e.target.value)}
+          >
+            <option value = "">Year</option>
+            <option value = "2023">2023</option>
+            <option value = "2022">2022</option>
           </select>
-          <select className = "text-black dark:text-white bg-white dark:bg-[#1f1f1f] border border-gray-300 dark:border-gray-700 px-3 py-2 border rounded-md">
-            <option>Subject</option>
-            <option>Data Structures</option>
-            <option>Python</option>
+
+          <select 
+          className = "text-black dark:text-white bg-white dark:bg-[#1f1f1f] border border-gray-300 dark:border-gray-700 px-3 py-2 border rounded-md"
+          onChange = {(e) => setSubject(e.target.value)}
+          >
+            <option value = "">Subject</option>
+            <option value = "Data Structures">Data Structures</option>
+            <option value = "Python">Python</option>
           </select>
-          <select className = "text-black dark:text-white bg-white dark:bg-[#1f1f1f] border border-gray-300 dark:border-gray-700 px-3 py-2 border rounded">
-            <option>Type</option>
-            <option>Endsem</option>
-            <option>Midsem</option>
+
+          <select 
+          className = "text-black dark:text-white bg-white dark:bg-[#1f1f1f] border border-gray-300 dark:border-gray-700 px-3 py-2 border rounded"
+          onChange = {(e) => setType(e.target.value)}
+          >
+            <option value = "">Type</option>
+            <option value = "Endsem">Endsem</option>
+            <option value = "Midsem">Midsem</option>
           </select>
         </div>
 
@@ -37,6 +78,13 @@ export default function Home() {
             Here you can find PYQs by searching above or using the filters. <br />Let's get started !
           </p>
         </div>
+
+        <button
+          onClick= {handleSearch}
+          className= "mt-6 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg:blue-350"
+          >
+            Search
+          </button>
       </div>
     </>
   );
