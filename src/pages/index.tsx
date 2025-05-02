@@ -55,6 +55,7 @@ export default function Home() {
           onChange={(e) => setYear(e.target.value)}
           >
             <option value = "">Year (All)</option>
+            <option value = "2024">2024</option>
             <option value = "2023">2023</option>
             <option value = "2022">2022</option>
           </select>
@@ -66,6 +67,8 @@ export default function Home() {
             <option value = "">Subject (All)</option>
             <option value = "Data Structures">Data Structures</option>
             <option value = "Python">Python</option>
+            <option value = "Computer Organization & Architecture">Computer Organization & Architecture</option>
+            <option value = "Classical Cryptography">Classical Cryptography</option>
           </select>
 
           <select 

@@ -13,7 +13,7 @@ export default function PyqCard({ pyq }: PyqCardProps) {
             <div className = "relative h-40 bg-gray-700">
                 <Image 
                     src = {pyq.thumbnailPath || "/placeholder.svg"}
-                    alt = {`Thumbnal from ${pyq.title}`}
+                    alt = {`Thumbnal for ${pyq.title}`}
                     fill
                     className = "object-cover"
                     onError = {(e) => {
