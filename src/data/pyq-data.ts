@@ -9,7 +9,7 @@ export const pyqData: Pyq[] = [
     type: "Endsem",
     tags: ["Linked List", "Arrays", "List ADT"],
     pdfPath: "/pyqs/2022/data-structures-endsem-2022.pdf",
-    thumbnailPath: "/thumbnails/ds-endsem-2022.png",
+    thumbnailPath: "/thumbnails/data-structures-endsem-2022.png",
   },
   {
     id: "ds-endsem-2023",
@@ -19,7 +19,7 @@ export const pyqData: Pyq[] = [
     type: "Endsem",
     tags: ["Linked List", "Arrays", "List ADT"],
     pdfPath: "/pyqs/2023/data-structures-endsem-2023.pdf",
-    thumbnailPath: "/thumbnails/ds-endsem-2023.png",
+    thumbnailPath: "/thumbnails/data-structures-endsem-2023.png",
   },
   {
     id: "ds-endsem-iot-2023",
@@ -29,17 +29,17 @@ export const pyqData: Pyq[] = [
     type: "Endsem",
     tags: ["Linked List", "Arrays", "List ADT"],
     pdfPath: "/pyqs/2023/data-structures-iot-endsem-2023.pdf",
-    thumbnailPath: "/thumbnails/ds--iot-endsem-2023.png",
+    thumbnailPath: "/thumbnails/data-structures-iot-endsem-2023.png",
   },
   {
-    id: "ds-endsem-2024",
+    id: "ds-endsem-iot-2024",
     title: "Endsem - Data Structures (2024)",
     year: "2024",
     subject: "Data Structures",
     type: "Endsem",
     tags: ["Linked List", "Arrays", "List ADT"],
     pdfPath: "/pyqs/2024/data-structures-endsem-2024.pdf",
-    thumbnailPath: "/thumbnails/ds-endsem-2024.png",
+    thumbnailPath: "/thumbnails/data-structures-endsem-2024.png",
   },
   {
     id: "ds-endsem-2024",
@@ -49,7 +49,7 @@ export const pyqData: Pyq[] = [
     type: "Endsem",
     tags: ["Linked List", "Arrays", "List ADT"],
     pdfPath: "/pyqs/2024/data-structures-endsem-2024.pdf",
-    thumbnailPath: "/thumbnails/ds-endsem-iot-2024.png",
+    thumbnailPath: "/thumbnails/data-structures-endsem-iot-2024.png",
   },
   {
     id: "python-endsem-2023",
@@ -109,7 +109,7 @@ export const pyqData: Pyq[] = [
     type: "Endsem",
     tags: ["Linked List", "Arrays", "List ADT"],
     pdfPath: "/PYQs/2023/classical-cryptography-endsem-2023.pdf",
-    thumbnailPath: "/thumbnails/crypto-endsem-2023.png",
+    thumbnailPath: "/thumbnails/classical-cryptography-endsem-2023.png",
   },
   {
     id: "crypto-endsem-2024",
@@ -119,7 +119,7 @@ export const pyqData: Pyq[] = [
     type: "Endsem",
     tags: ["Linked List", "Arrays", "List ADT"],
     pdfPath: "/PYQs/2024/classical-cryptography-endsem-2024.pdf",
-    thumbnailPath: "/thumbnails/crypto-endsem-2024.png",
+    thumbnailPath: "/thumbnails/classical-cryptography-endsem-2024.png",
   },
 ]
 

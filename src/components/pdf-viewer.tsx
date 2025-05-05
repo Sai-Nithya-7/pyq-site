@@ -1,12 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Document, Page, pdfjs } from "react-pdf"
 import { ChevronLeft, ChevronRight, Download, ZoomIn, ZoomOut } from "lucide-react"
 import "react-pdf/dist/esm/Page/AnnotationLayer.css"
 import "react-pdf/dist/esm/Page/TextLayer.css"
 
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudfare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`
+const pdfWorker = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf/worker.min.js`
+pdfjs.GlobalWorkerOptions.workerSrc = pdfWorker
 
 interface PdfViewerProp {
     pdfPath: string
@@ -19,6 +20,11 @@ export default function PdfViewer({ pdfPath, title}: PdfViewerProp) {
     const [scale, SetScale] = useState(1.0)
     const [load, SetLoad] = useState(true)
     const [error, SetError] = useState<Error | null>(null)
+    const [mount, setMount] = useState(false)
+
+    useEffect(() => {
+        setMount(true)
+    })
 
     function DocumentSuccess({ numPages }: { numPages: number }) {
         SetnumPages(numPages)
